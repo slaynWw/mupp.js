@@ -1,6 +1,6 @@
 {
     "name": "scootz.js",
-    "version": "1.0.0",
+    "version": "1.0.1-build.1701",
 "description": "A silly package for aoi.js that registers custom functions you can use.",
     "main": "./src/index.js",
     "scripts": {
@@ -32,7 +32,7 @@
       "jest": "^27.5.1"
     },
     "dependencies": {
-      "chalk": "^4.1.2",
+      "chalk": "^4.1.2"
     }
   }
   

@@ -2,7 +2,7 @@
 A silly package for aoi.js that registers custom functions you can use.
 
 # Disclaimer
-This package (`scootz.js`) is not made by official aoi.js developers and so therefore, do not request support for the package in their official support server. Instead, request support for it by going into [Github Issues](https://github.com/dodoGames-s-Studios/scootz.js/issues/new/choose).
+This package (`scootz.js`) is not made by official aoi.js developers and so therefore, do not request support for the package in their official support server. Instead, request support for it by going into [Github Issues](https://github.com/ddodogames/scootz.js/issues/new/choose).
 
 # Why does this exist?
 It originally started as `dodoplugins.js` which was only made because i got annoyed of having to update multiple custom functions in each bot project i have. This was how the original package was born. 
