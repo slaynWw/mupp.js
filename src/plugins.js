@@ -55,7 +55,7 @@ client.functionManager.createFunction({
     $checkContains[$messageType[$get[messageidchecker];{channelID}];8;9;10;11]
 
 
-$let[messageidchecker;$advancedReplaceText[$checkCondition[$messageExists[{messageID};{channelID}]==true];true;{messageid};false;$messageID]]
+$let[messageidchecker;$advancedReplaceText[$checkCondition[$messageExists[{messageID};{channelID}]==true];true;{messageID};false;$messageID]]
   ` 
      
 })
