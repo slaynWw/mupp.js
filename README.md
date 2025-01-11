@@ -19,7 +19,7 @@ aoi.js 6.9.0 or later is required.
 npm i scootz.js@latest
 
 // Canary version
-npm i https://github.com/ddodogames/scootz.js#canary
+npm i https://github.com/ddodogames/scootz.js
 
 // or if you want to use completed pre-release builds
 npm i scootz.js@canary

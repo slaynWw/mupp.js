@@ -73,6 +73,14 @@ client.functionManager.createFunction({
     }}
 })
 
+// Intended for "onJoin" event from aoi.js
+client.functionManager.createFunction({
+  name: "$welcomeMessage",
+  type: "aoi.js",
+  params: ["content"],
+  code: `$advancedReplaceText[$nonEscape[{content}];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]`
+})
+
 
 client.functionManager.createFunction({
   name: "$commandExists",
