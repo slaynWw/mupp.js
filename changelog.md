@@ -7,3 +7,5 @@
 
 # 1.0.0
 Nothing much has changed besides few changes such as new usage for existing from the original package and a new function called `$welcomeMessage` intended to be used for `onJoin` event from aoi.js
+
+Node.js 20 or later is now required to be able to use the package as well!
