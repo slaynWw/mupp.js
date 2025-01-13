@@ -1,11 +1,17 @@
 # 1.0.1 Build 1710 
 
 ## Changes
+* Added `$randomColor`
+* Removed `$ifv6` as it no longer works
 
 ### Source code
 Internal improvements has been added to the source code. Files for the functions are now located in the new `plugins.js` file meanwhile the old one has been renamed to `pluginsloader.js` as a way to make the code cleaner.
 
 In addition to this, a new console message has been introduced which announces that scootz.js is ready to be used. Thus, helping you to check on whether or not the package has worked.
+
+## Bug Fixes
+* Fixed a bug in which running `$isBoostMessage` will cause the bot to stop responding
+* Fixed potential issues for functions like `$userURL`
 
 # 1.0.1 Build 1701
 

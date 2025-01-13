@@ -14,13 +14,15 @@ module.exports = [{
   name: "$owoify",
   type: "aoi.js",
   params: ["text"],
-  code: `$replaceTextWithRegex[$replaceTextWithRegex[{text};/r|l/;g;w];/R|L/;g;W]`
+  code: `$replaceTextWithRegex[$replaceTextWithRegex[$get[text];/r|l/;g;w];/R|L/;g;W]
+$let[text;{text}]`
 },{
   name: "$noMentionReply",
   params: ["messageID"],
   type: "aoi.js",
-  code: `$reply[{messageID};false]
-$onlyIf[$messageExists[{messageID}]==true;The message specified does not exist.]`
+  code: `$reply[$get[messageID];false]
+$onlyIf[$messageExists[$get[messageID]]==true;The message specified does not exist.]
+$let[messageID;{messageID}]`
 },{
   name: "$mentionAuthor",
   params: [],
@@ -30,17 +32,20 @@ $onlyIf[$messageExists[{messageID}]==true;The message specified does not exist.]
   name: "$userURL",
   type: "aoi.js",
   params: ["userID"],
-  code: `https#COLON#//discord.com/users/{userID}
-$onlyIf[$userExists[{userID}]==true;The user specified does not exist.]`
+  code: `https#COLON#//discord.com/users/$get[userID]
+$onlyIf[$userExists[$get[userID]]==true;The user specified does not exist.]
+$let[userID;{userID}]`
 },{
   name: "$isBoostMessage",
   params: ["messageID", "channelID"],
   type: "aoi.js",
   code: `
-  $checkContains[$messageType[$get[messageidchecker];{channelID}];8;9;10;11]
+  $checkContains[$messageType[$get[messageidchecker];$get[channelID]];8;9;10;11]
 
 
-  $let[messageidchecker;$advancedReplaceText[$checkCondition[$messageExists[{messageID};{channelID}]==true];true;{messageID};false;$messageID]]
+  $let[messageidchecker;$advancedReplaceText[$checkCondition[$messageExists[$get[messageID];$get[channelID]]==true];true;$get[messageID];false;$messageID]]
+  $let[channelID;{channelID}]
+  $let[messageID;{messageID}]
   `
 
 },{
@@ -58,12 +63,14 @@ $onlyIf[$userExists[{userID}]==true;The user specified does not exist.]`
   name: "$welcomeMessage",
   type: "aoi.js",
   params: ["content"],
-  code: `$advancedReplaceText[$nonEscape[{content}];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]`
+  code: `$advancedReplaceText[$nonEscape[$get[content]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]
+  $let[content;{content}]`
 },{
   name: "$commandExists",
   type: "aoi.js",
   params: ["name"],
-  code: `$checkCondition[$commandInfo[$toLowerCase[{name}];name]!=]`
+  code: `$checkCondition[$commandInfo[$toLowerCase[$get[name]];name]!=]
+$let[name;{name}]`
 },{
   name: "$clientAvatar",
   params: [],
@@ -74,10 +81,6 @@ $onlyIf[$userExists[{userID}]==true;The user specified does not exist.]`
   params: [],
   type: "aoi.js",
   code: `$userAvatar[632607624742961153]`
-},{
-  name: "$ifv6",
-  type: "djs",
-  code: async d => client.functionManager.cache.get("if").code(d)
 },{
   name: '$arch',
   type: 'djs',
@@ -141,6 +144,19 @@ $onlyIf[$userExists[{userID}]==true;The user specified does not exist.]`
     const [msg, color = "#FFFFFF"] = data.inside.splits;
     if (!msg) return d.aoiError.fnError(d, 'custom', {}, 'no text provided');
     console.log(chalk.hex(color)(msg.addBrackets()));
+
+    return {
+      code: d.util.setCode(data)
+    }
+  }
+},{
+  name: "$randomColor",
+  type: "djs",
+  code: async (d) => {
+    const data = d.util.aoiFunc(d);
+
+    const hex = Math.floor(Math.random() * 16777215).toString(16);
+    data.result = `${hex.padStart(6, "0")}`;
 
     return {
       code: d.util.setCode(data)
