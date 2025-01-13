@@ -1,7 +1,20 @@
+# 1.0.1 Build 1710 
+
+## Changes
+
+### Source code
+Internal improvements has been added to the source code. Files for the functions are now located in the new `plugins.js` file meanwhile the old one has been renamed to `pluginsloader.js` as a way to make the code cleaner.
+
+In addition to this, a new console message has been introduced which announces that scootz.js is ready to be used. Thus, helping you to check on whether or not the package has worked.
+
 # 1.0.1 Build 1701
-* Fixed a bug that was using the wrong parameter name in `$isBoostMessage`
+
+## Changes
 * Added `$owoify`
   * Usage: `$owoify[text]`
+
+## Bug Fixes
+* Fixed a bug that was using the wrong parameter name in `$isBoostMessage`
 * Fixed the old Github username `dodoGames-s-Studios` still being used in a hyperlink on `README.md` file
 
 
