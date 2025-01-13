@@ -49,7 +49,7 @@ $let[userID;{userID}]`
   `
 
 },{
-  name: '$scootzversion',
+  name: '$scootzVersion',
   type: 'djs',
   code: async d => {
     const data = d.util.aoiFunc(d);
