@@ -113,7 +113,7 @@ $let[name;{name}]`
       code: d.util.setCode(data)
     }}
 },{
-  name: '$IsbotPublic',
+  name: '$isBotPublic',
   type: 'djs',
   code: async d => {
     const data = d.util.aoiFunc(d);
