@@ -15,6 +15,9 @@ In addition to this, a new console message has been introduced which announces t
 * Fixed a bug in which running `$isBoostMessage` will cause the bot to silently stop working
 * Fixed potential issues for functions like `$userURL`
 
+## Other
+* Updated the Docs link from readme to redirect to a functional one
+
 # 1.0.1 Build 1701
 
 ## Changes

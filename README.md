@@ -55,7 +55,7 @@ This will enable all custom functions that were created in the package.
 
 # Links
 This is Optional, So Check Links at Your own Discretion.
-* [Docs](https://ddodogames.github.io/scootz-docs/guides/introduction)
+* [Docs](https://ddodogames.github.io/scootz-docs/home/introduction)
 * [NPM page](https://www.npmjs.com/package/scootz.js)
 
 # Credits
