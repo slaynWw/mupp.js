@@ -82,6 +82,12 @@ $let[name;{name}]`
   type: "aoi.js",
   code: `$userAvatar[632607624742961153]`
 },{
+  name: "$excludeSpecialChars",
+  type: "aoi.js",
+  params: ["text"],
+  code: `$removeContains[$get[text];+;-;/;%;&;!;?;@;^;*;<;>;$;#;.;_;=;~;|;';,]
+$let[text;{text}]`
+},{
   name: '$arch',
   type: 'djs',
   code: async d => {

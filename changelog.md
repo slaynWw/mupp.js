@@ -2,6 +2,8 @@
 
 ## Changes
 * Added `$randomColor`
+* Added `$excludeSpecialChars`
+  * Usage: `$excludeSpecialChars[text]`
 * Removed `$ifv6` as it no longer works
 
 ### Source code
