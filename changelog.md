@@ -1,3 +1,19 @@
+# 1.0.1
+
+## Changes
+* Added some functions such as `$randomColor`, `$excludeSpecialChars`, `$owoify` and `$yesorno`
+* Removed `$ifv6` as it no longer works
+
+## Bug Fixes
+* Fixed a bug in which running `$isBoostMessage` will cause the bot to silently stop working
+* Fixed the old Github username `dodoGames-s-Studios` still being used in a hyperlink on `README.md` file
+* Fixed potential issues for functions like `$userURL` (like not accepting wrong arguments anymore)
+
+## Other
+* Added Internal improvements to the source code
+* Updated the Docs link from readme to redirect to a functional one
+* Added a console message that runs when the package is loaded
+
 # 1.0.1 Build 1710 
 
 ## Changes

@@ -2,8 +2,8 @@ const chalk = require('chalk');
 
 module.exports = [{
   name: "$randomTopic",
-  params: [],
   type: "aoi.js",
+  params: [],
   code: `$randomText[Did you go out today?;What did you eat today?;What are you currently worried about?;What game have you spent the most hours playing?;What game have you spent the most hours playing?;What movie can you watch over and over without ever getting tired of?;What are you interested in that most people aren't?;How do you judge a person?;What do you think you are much better at than you actually are?;Do you enjoy spicy food?;Do you usually get bored most of the time?;What do you think about technology?;What do you think about AI?]`
 },{
   name: "$8ballanswers",
@@ -18,15 +18,15 @@ module.exports = [{
 $let[text;{text}]`
 },{
   name: "$noMentionReply",
-  params: ["messageID"],
   type: "aoi.js",
+  params: ["messageID"],
   code: `$reply[$get[messageID];false]
 $onlyIf[$messageExists[$get[messageID]]==true;The message specified does not exist.]
 $let[messageID;{messageID}]`
 },{
   name: "$mentionAuthor",
-  params: [],
   type: "aoi.js",
+  params: [],
   code: `<@$authorID>`
 },{
   name: "$userURL",
@@ -37,8 +37,8 @@ $onlyIf[$userExists[$get[userID]]==true;The user specified does not exist.]
 $let[userID;{userID}]`
 },{
   name: "$isBoostMessage",
-  params: ["messageID", "channelID"],
   type: "aoi.js",
+  params: ["messageID", "channelID"],
   code: `
   $checkContains[$messageType[$get[messageidchecker];$get[channelID]];8;9;10;11]
 
@@ -73,13 +73,13 @@ $let[userID;{userID}]`
 $let[name;{name}]`
 },{
   name: "$clientAvatar",
-  params: [],
   type: "aoi.js",
+  params: [],
   code: `$userAvatar[$clientID]`
 },{
   name: "$dodoAvatar",
-  params: [],
   type: "aoi.js",
+  params: [],
   code: `$userAvatar[632607624742961153]`
 },{
   name: "$excludeSpecialChars",
@@ -87,6 +87,11 @@ $let[name;{name}]`
   params: ["text"],
   code: `$removeContains[$get[text];+;-;/;%;&;!;?;@;^;*;<;>;$;#;.;_;=;~;|;';,]
 $let[text;{text}]`
+},{
+  name: "$yesorno",
+  type: "aoi.js",
+  params: [],
+  code: `*$randomText[Yes;No]*`
 },{
   name: '$arch',
   type: 'djs',
