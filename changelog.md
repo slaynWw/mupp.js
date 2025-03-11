@@ -2,6 +2,7 @@
 
 ## Changes
 * Added `$cpuModel`
+* Added `<globalname>` to `$welcomeMessage`
 
 # 1.0.1
 

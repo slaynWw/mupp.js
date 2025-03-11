@@ -63,7 +63,7 @@ $let[userID;{userID}]`
   name: "$welcomeMessage",
   type: "aoi.js",
   params: ["content"],
-  code: `$advancedReplaceText[$nonEscape[$get[content]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]
+  code: `$advancedReplaceText[$nonEscape[$get[content]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName;<globalname>;$userGlobalName]
   $let[content;{content}]`
 },{
   name: "$commandExists",
