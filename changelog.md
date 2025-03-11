@@ -1,3 +1,8 @@
+# 1.0.2 Build 1715
+
+## Changes
+* Added `$cpuModel`
+
 # 1.0.1
 
 ## Changes

@@ -93,6 +93,11 @@ $let[text;{text}]`
   params: [],
   code: `*$randomText[Yes;No]*`
 },{
+  name: "$cpuModel",
+  type: "aoi.js",
+  params: [],
+  code: `$exec[lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1']`
+},{
   name: '$arch',
   type: 'djs',
   code: async d => {
