@@ -4,7 +4,7 @@ const { version } = require('../package.json');
 
 
 module.exports = {
-  Plugins
+    Plugins
 };
 
-console.log(chalk.green(`scootz.js v${version} is ready to be used!`))
+console.log(chalk.green(`mupp.js v${version} is ready!`))
